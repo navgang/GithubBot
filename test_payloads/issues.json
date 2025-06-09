@@ -1,0 +1,8 @@
+{
+  "repository": { "full_name": "navgang/GithubBot" },
+  "issue": {
+    "number": 1,
+    "title": "Bug: login page crashes",
+    "body": "When I submit invalid credentials, I get a 500 error instead of validation."
+  }
+}
