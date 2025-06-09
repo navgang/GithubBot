@@ -1,0 +1,30 @@
+name: AI Triage & PR Summary
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened, synchronized]
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with: { python-version: '3.10' }
+      - run: pip install -r requirements.txt
+
+      - name: Auto-triage Issue
+        if: github.event_name == 'issues'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: cat $GITHUB_EVENT_PATH | python scripts/triage.py
+
+      - name: Summarize PR
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: cat $GITHUB_EVENT_PATH | python scripts/pr_summarize.py
