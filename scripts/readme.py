@@ -64,9 +64,9 @@ LICENSE (first 2000 chars):
 """
 
 resp = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
+    model="gpt-4o-mini",
     messages=[{"role":"user","content":prompt}],
-    temperature=0.3,
+    temperature=0.2,
 )
 readme = resp.choices[0].message.content.strip()
 
