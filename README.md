@@ -1,9 +1,9 @@
 ```markdown
 # Project Name: OpenAI GitHub Assistant
 
-A friendly tool to streamline interactions with the OpenAI API and manage GitHub repositories effortlessly.
+A friendly tool to interact with OpenAI's API and manage GitHub repositories seamlessly.
 
-## Installation
+## Installation Steps
 
 To get started with the OpenAI GitHub Assistant, follow these steps:
 
@@ -13,7 +13,7 @@ To get started with the OpenAI GitHub Assistant, follow these steps:
    cd openai-github-assistant
    ```
 
-2. **Set up a virtual environment (optional but recommended)**:
+2. **Set up a virtual environment** (optional but recommended):
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -25,35 +25,38 @@ To get started with the OpenAI GitHub Assistant, follow these steps:
    ```
 
 4. **Set up environment variables**:
-   Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
-   ```plaintext
+   Create a `.env` file in the root directory of the project and add your OpenAI API key and GitHub token:
+   ```
    OPENAI_API_KEY=your_openai_api_key
    GITHUB_TOKEN=your_github_token
    ```
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
+Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a simple example of how to use it:
 
 ```python
-from scripts.assistant import OpenAIGitHubAssistant
+from openai_github_assistant import OpenAIGitHubAssistant
 
 # Initialize the assistant
 assistant = OpenAIGitHubAssistant()
 
-# Example function call
-response = assistant.create_issue(repo='yourusername/yourrepo', title='New Issue', body='This is a test issue.')
+# Example function to create a new GitHub issue
+response = assistant.create_github_issue(
+    repo='yourusername/yourrepository',
+    title='New Issue Title',
+    body='Description of the issue.'
+)
+
 print(response)
 ```
-
-Make sure to replace `'yourusername/yourrepo'` with your actual GitHub repository.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository**.
-2. **Create a new branch**:
+1. **Fork the repository**: Click the "Fork" button at the top right of the page.
+2. **Create a new branch**: 
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -61,23 +64,21 @@ We welcome contributions! Here’s how you can help:
    ```bash
    git commit -m "Add your message here"
    ```
-4. **Push to the branch**:
+4. **Push to your branch**:
    ```bash
    git push origin feature/your-feature-name
    ```
-5. **Open a Pull Request** on GitHub.
+5. **Open a Pull Request**: Go to the original repository and click on "New Pull Request".
 
-Please ensure your code adheres to our coding standards and includes tests where applicable.
+Please ensure your code adheres to the project's coding standards and includes tests where applicable.
 
 ## Where to Get Help
 
 If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue** on GitHub.
+- **Open an issue** in the GitHub repository.
 - **Join our community** on [Discord/Slack/Forum link] (if applicable).
-- **Email us** at support@example.com.
+- **Check the documentation** for more detailed information.
 
 Happy coding!
 ```
-
-This README provides a clear and friendly overview of the project, installation steps, usage examples, contribution guidelines, and support options. Adjust the links and contact information as necessary for your project.
