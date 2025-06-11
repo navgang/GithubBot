@@ -18,13 +18,13 @@ jobs:
       - name: Auto-triage Issue
         if: github.event_name == 'issues'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          OPENAI_API_KEY: ${{ secrets.SECRET }}
         run: cat $GITHUB_EVENT_PATH | python scripts/qa.py
 
       - name: Summarize PR
         if: github.event_name == 'pull_request'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          OPENAI_API_KEY: ${{ secrets.SECRET }}
         run: cat $GITHUB_EVENT_PATH | python scripts/summarize.py
