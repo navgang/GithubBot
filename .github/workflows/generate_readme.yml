@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate & Publish README
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB }}
+          OPENAI_API_KEY: ${{ secrets.SECRET }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python scripts/readme.py
