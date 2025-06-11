@@ -1,7 +1,7 @@
 ```markdown
 # Project Name: OpenAI GitHub Assistant
 
-A friendly tool that integrates OpenAI's capabilities with GitHub to enhance your workflow.
+A friendly tool to interact with the OpenAI API and manage GitHub repositories seamlessly.
 
 ## Installation Steps
 
@@ -25,7 +25,7 @@ To get started with the OpenAI GitHub Assistant, follow these simple steps:
    ```
 
 4. **Set up your environment variables:**
-   Create a `.env` file in the root directory of the project and add your OpenAI API key and GitHub token:
+   Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
    ```
    OPENAI_API_KEY=your_openai_api_key
    GITHUB_TOKEN=your_github_token
@@ -33,44 +33,54 @@ To get started with the OpenAI GitHub Assistant, follow these simple steps:
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to run the main script:
+Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
 
-```bash
-python scripts/main.py
+```python
+from openai_github_assistant import OpenAIGitHubAssistant
+
+# Initialize the assistant
+assistant = OpenAIGitHubAssistant()
+
+# Example function to create a new GitHub issue
+response = assistant.create_github_issue(
+    repo='yourusername/yourrepository',
+    title='Issue Title',
+    body='Description of the issue.'
+)
+
+print(response)
 ```
-
-This will initiate the assistant and guide you through its features. You can customize the behavior by modifying the parameters in the script.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository** on GitHub.
-2. **Create a new branch** for your feature or bug fix:
+1. **Fork the repository** and create your branch:
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feature/YourFeature
    ```
-3. **Make your changes** and commit them:
-   ```bash
-   git commit -m "Add your descriptive commit message"
-   ```
-4. **Push your branch** to your fork:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. **Open a Pull Request** on the main repository.
 
-Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+2. **Make your changes** and commit them:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+
+3. **Push to the branch**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+
+4. **Open a Pull Request** on GitHub.
+
+Please ensure your code adheres to the project's coding standards and includes tests where applicable.
 
 ## Where to Get Help
 
 If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue** on GitHub: [Issues](https://github.com/yourusername/openai-github-assistant/issues)
-- **Join our community** on Discord/Slack (link to be provided).
+- **Open an issue** in the GitHub repository.
+- **Join our community** on [Discord/Slack/Forum link] (if applicable).
 - **Check the documentation** for more detailed usage instructions.
 
-Thank you for your interest in contributing to the OpenAI GitHub Assistant!
+Happy coding!
 ```
-
-Feel free to replace `yourusername` with your actual GitHub username and adjust any links or details as necessary.
