@@ -27,4 +27,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: cat $GITHUB_EVENT_PATH | python scripts/pr_summarize.py
+        run: cat $GITHUB_EVENT_PATH | python scripts/summarize.py
