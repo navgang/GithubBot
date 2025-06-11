@@ -1,86 +1,83 @@
 ```markdown
 # Project Name: OpenAI GitHub Assistant
 
-A friendly tool to interact with the OpenAI API and manage GitHub repositories seamlessly.
+A friendly tool to streamline interactions with the OpenAI API and manage GitHub repositories effortlessly.
 
 ## Installation
 
 To get started with the OpenAI GitHub Assistant, follow these steps:
 
-1. **Clone the repository:**
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/openai-github-assistant.git
    cd openai-github-assistant
    ```
 
-2. **Create a virtual environment (optional but recommended):**
+2. **Set up a virtual environment (optional but recommended)**:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. **Install the required packages:**
+3. **Install the required packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up your environment variables:**
+4. **Set up environment variables**:
    Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
-   ```
+   ```plaintext
    OPENAI_API_KEY=your_openai_api_key
    GITHUB_TOKEN=your_github_token
    ```
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a simple example of how to use the tool:
+Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
 
 ```python
-from openai_github_assistant import GitHubAssistant
+from scripts.assistant import OpenAIGitHubAssistant
 
 # Initialize the assistant
-assistant = GitHubAssistant()
+assistant = OpenAIGitHubAssistant()
 
-# Example: Create a new issue in a GitHub repository
-response = assistant.create_issue(
-    repo='yourusername/yourrepository',
-    title='New Issue Title',
-    body='This is the body of the issue.'
-)
-
+# Example function call
+response = assistant.create_issue(repo='yourusername/yourrepo', title='New Issue', body='This is a test issue.')
 print(response)
 ```
+
+Make sure to replace `'yourusername/yourrepo'` with your actual GitHub repository.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository** and create your branch:
+1. **Fork the repository**.
+2. **Create a new branch**:
    ```bash
-   git checkout -b feature/YourFeature
+   git checkout -b feature/your-feature-name
    ```
-
-2. **Make your changes** and commit them:
+3. **Make your changes** and commit them:
    ```bash
-   git commit -m "Add some feature"
+   git commit -m "Add your message here"
    ```
-
-3. **Push to the branch**:
+4. **Push to the branch**:
    ```bash
-   git push origin feature/YourFeature
+   git push origin feature/your-feature-name
    ```
+5. **Open a Pull Request** on GitHub.
 
-4. **Open a Pull Request** on GitHub.
-
-Please ensure your code follows the project's coding style and includes appropriate tests.
+Please ensure your code adheres to our coding standards and includes tests where applicable.
 
 ## Where to Get Help
 
 If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue** in the GitHub repository.
-- **Join our community** on [Discord/Slack/other platform] (link).
-- **Check the documentation** for more detailed information.
+- **Open an issue** on GitHub.
+- **Join our community** on [Discord/Slack/Forum link] (if applicable).
+- **Email us** at support@example.com.
 
-Thank you for using OpenAI GitHub Assistant! Happy coding!
+Happy coding!
 ```
+
+This README provides a clear and friendly overview of the project, installation steps, usage examples, contribution guidelines, and support options. Adjust the links and contact information as necessary for your project.
