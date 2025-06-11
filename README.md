@@ -1,87 +1,84 @@
 ```markdown
-# Project Name: OpenAI GitHub Assistant
+# OpenAI GitHub Assistant
 
-A friendly tool to interact with the OpenAI API and manage GitHub repositories seamlessly.
+A friendly tool to interact with GitHub using OpenAI's API, making automation and management easier.
 
-## Installation Steps
+## Installation
 
-To get started with OpenAI GitHub Assistant, follow these simple steps:
+To get started with OpenAI GitHub Assistant, follow these steps:
 
-1. **Clone the repository**:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/yourusername/openai-github-assistant.git
    cd openai-github-assistant
    ```
 
-2. **Set up a virtual environment (optional but recommended)**:
+2. **Set up a virtual environment (optional but recommended):**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. **Install the required packages**:
+3. **Install the required packages:**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**:
-   Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
-   ```plaintext
+4. **Set up your environment variables:**
+   Create a `.env` file in the root of the project and add your OpenAI API key:
+   ```
    OPENAI_API_KEY=your_openai_api_key
-   GITHUB_TOKEN=your_github_token
    ```
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
+Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a simple example of how to use it:
 
 ```python
-from openai_github_assistant import GitHubAssistant
+from scripts.github_assistant import GitHubAssistant
 
 # Initialize the assistant
 assistant = GitHubAssistant()
 
-# Example: Create a new issue in a GitHub repository
-response = assistant.create_issue(
-    repo='yourusername/yourrepository',
-    title='New Issue Title',
-    body='Description of the issue.'
-)
-
-print(response)
+# Example command to fetch repositories
+repositories = assistant.get_repositories(user='your_github_username')
+print(repositories)
 ```
 
-For more detailed usage, please refer to the documentation in the `scripts` folder.
+Make sure to replace `'your_github_username'` with your actual GitHub username.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository**: Click the "Fork" button at the top right of the repository page.
-2. **Create a new branch**: 
+1. **Fork the repository** and create your branch:
    ```bash
-   git checkout -b feature/YourFeatureName
+   git checkout -b feature/YourFeature
    ```
-3. **Make your changes**: Implement your feature or fix.
-4. **Commit your changes**: 
+
+2. **Make your changes** and commit them:
    ```bash
-   git commit -m "Add your message here"
+   git commit -m "Add some feature"
    ```
-5. **Push to your fork**: 
+
+3. **Push to your branch**:
    ```bash
-   git push origin feature/YourFeatureName
+   git push origin feature/YourFeature
    ```
-6. **Open a pull request**: Go to the original repository and click on "New Pull Request".
+
+4. **Open a Pull Request** on GitHub.
 
 Please ensure your code adheres to the project's coding standards and includes appropriate tests.
 
 ## Where to Get Help
 
-If you encounter any issues or have questions, feel free to reach out:
+If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue**: Use the GitHub Issues tab to report bugs or request features.
-- **Join our community**: Engage with other users and contributors in our [Discord channel](https://discord.gg/yourdiscordlink).
-- **Email us**: For direct inquiries, you can reach us at support@yourproject.com.
+- **Open an issue** on GitHub: [Issues](https://github.com/yourusername/openai-github-assistant/issues)
+- **Join our community** on Discord: [Discord Link](https://discord.gg/yourdiscordlink)
+- **Email us** at support@yourdomain.com
 
 Happy coding!
 ```
+
+Make sure to replace placeholders like `yourusername`, `your_openai_api_key`, and `yourdiscordlink` with actual values relevant to your project.
