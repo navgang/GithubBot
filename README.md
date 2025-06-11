@@ -1,11 +1,11 @@
 ```markdown
 # Project Name: OpenAI GitHub Assistant
 
-A friendly tool to help you interact with the OpenAI API and manage GitHub repositories seamlessly.
+A friendly tool to interact with the OpenAI API and manage GitHub repositories seamlessly.
 
 ## Installation Steps
 
-To get started with the OpenAI GitHub Assistant, follow these simple steps:
+To get started with OpenAI GitHub Assistant, follow these simple steps:
 
 1. **Clone the repository**:
    ```bash
@@ -13,7 +13,7 @@ To get started with the OpenAI GitHub Assistant, follow these simple steps:
    cd openai-github-assistant
    ```
 
-2. **Set up a virtual environment** (optional but recommended):
+2. **Set up a virtual environment (optional but recommended)**:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -24,7 +24,7 @@ To get started with the OpenAI GitHub Assistant, follow these simple steps:
    pip install -r requirements.txt
    ```
 
-4. **Set up your environment variables**:
+4. **Set up environment variables**:
    Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
    ```plaintext
    OPENAI_API_KEY=your_openai_api_key
@@ -36,51 +36,52 @@ To get started with the OpenAI GitHub Assistant, follow these simple steps:
 Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
 
 ```python
-from openai_github_assistant import OpenAIGitHubAssistant
+from openai_github_assistant import GitHubAssistant
 
 # Initialize the assistant
-assistant = OpenAIGitHubAssistant()
+assistant = GitHubAssistant()
 
-# Example: Generate a GitHub issue
-issue_title = "Bug: Application crashes on startup"
-issue_body = assistant.generate_issue_body(issue_title)
+# Example: Create a new issue in a GitHub repository
+response = assistant.create_issue(
+    repo='yourusername/yourrepository',
+    title='New Issue Title',
+    body='Description of the issue.'
+)
 
-# Create the issue in your GitHub repository
-assistant.create_github_issue(title=issue_title, body=issue_body)
+print(response)
 ```
+
+For more detailed usage, please refer to the documentation in the `scripts` folder.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository** and create your branch:
+1. **Fork the repository**: Click the "Fork" button at the top right of the repository page.
+2. **Create a new branch**: 
    ```bash
-   git checkout -b feature/YourFeature
+   git checkout -b feature/YourFeatureName
    ```
-
-2. **Make your changes** and commit them:
+3. **Make your changes**: Implement your feature or fix.
+4. **Commit your changes**: 
    ```bash
-   git commit -m "Add some feature"
+   git commit -m "Add your message here"
    ```
-
-3. **Push to your branch**:
+5. **Push to your fork**: 
    ```bash
-   git push origin feature/YourFeature
+   git push origin feature/YourFeatureName
    ```
+6. **Open a pull request**: Go to the original repository and click on "New Pull Request".
 
-4. **Open a Pull Request** on GitHub.
-
-Please ensure your code adheres to our coding standards and includes tests where applicable.
+Please ensure your code adheres to the project's coding standards and includes appropriate tests.
 
 ## Where to Get Help
 
-If you have any questions or need assistance, feel free to reach out:
+If you encounter any issues or have questions, feel free to reach out:
 
-- **Open an issue** in the GitHub repository.
-- **Join our community** on [Discord/Slack/Forum link].
-- **Check the documentation** for more detailed usage instructions.
+- **Open an issue**: Use the GitHub Issues tab to report bugs or request features.
+- **Join our community**: Engage with other users and contributors in our [Discord channel](https://discord.gg/yourdiscordlink).
+- **Email us**: For direct inquiries, you can reach us at support@yourproject.com.
 
 Happy coding!
 ```
-
-This README provides a clear and friendly introduction to the OpenAI GitHub Assistant project, guiding users through installation, usage, contribution, and support. Adjust the repository URL and community links as necessary.
