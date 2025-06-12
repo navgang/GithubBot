@@ -1,77 +1,78 @@
-```markdown
 # Project Name: OpenAI GitHub Assistant
 
-A friendly tool to help you interact with the OpenAI API and manage your GitHub repositories seamlessly.
+A friendly tool to help you manage your GitHub repositories using OpenAI's API.
 
-## Installation
+## Installation Steps
 
-To get started with OpenAI GitHub Assistant, you'll need to have Python installed on your machine. Follow these steps to install the necessary dependencies:
+To get started with OpenAI GitHub Assistant, follow these simple steps:
 
-1. **Clone the repository:**
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/openai-github-assistant.git
    cd openai-github-assistant
    ```
 
-2. **Create a virtual environment (optional but recommended):**
+2. **Create a virtual environment** (optional but recommended):
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
-3. **Install the required packages:**
+3. **Install the required packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up your environment variables:**
-   Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
+4. **Set up your environment variables**:
+   Create a `.env` file in the root directory of the project and add your OpenAI API key:
    ```
    OPENAI_API_KEY=your_openai_api_key
-   GITHUB_TOKEN=your_github_token
    ```
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant! Here’s a simple example of how to use the tool:
+Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use the tool:
 
-1. **Run the main script:**
-   ```bash
-   python scripts/main.py
-   ```
+```python
+from scripts.github_assistant import GitHubAssistant
 
-2. **Follow the prompts to interact with the OpenAI API and manage your GitHub repositories.**
+# Initialize the assistant
+assistant = GitHubAssistant()
+
+# Example command to list repositories
+repositories = assistant.list_repositories()
+print(repositories)
+```
+
+For more detailed usage, check the documentation in the `scripts` folder.
 
 ## How to Contribute
 
-We welcome contributions! If you’d like to help improve OpenAI GitHub Assistant, please follow these steps:
+We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository.**
-2. **Create a new branch:**
+1. **Fork the repository**: Click the "Fork" button at the top right of the page.
+2. **Create a new branch**: 
    ```bash
-   git checkout -b feature/YourFeatureName
+   git checkout -b feature/your-feature-name
    ```
-3. **Make your changes and commit them:**
+3. **Make your changes** and commit them:
    ```bash
-   git commit -m "Add a new feature"
+   git commit -m "Add your descriptive commit message"
    ```
-4. **Push to your branch:**
+4. **Push to your branch**:
    ```bash
-   git push origin feature/YourFeatureName
+   git push origin feature/your-feature-name
    ```
-5. **Open a pull request.**
+5. **Open a Pull Request**: Go to the original repository and click on "New Pull Request".
 
-Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+Please ensure your code adheres to the project's coding standards and includes tests where applicable.
 
 ## Where to Get Help
 
 If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue** in the GitHub repository.
-- **Join our community** on [Discord/Slack/other platform] (link).
-- **Check the documentation** for more detailed information.
+- **Open an issue**: If you encounter a bug or have a feature request, please open an issue in the GitHub repository.
+- **Join our community**: Connect with other users and contributors in our [Discord channel](https://discord.gg/yourchannel) or [Slack workspace](https://slack.com/yourworkspace).
+- **Email us**: For direct inquiries, you can email us at support@yourproject.com.
 
-Happy coding!
-```
-
-This README provides a clear and friendly introduction to the OpenAI GitHub Assistant project, covering installation, usage, contribution guidelines, and support options. Adjust the links and specific details as necessary to fit your project.
+Happy coding! 🎉
