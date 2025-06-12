@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import openai
 from github import Github
 
-# load secrets
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GITHUB_TOKEN    = os.getenv("GITHUB_TOKEN")
@@ -16,7 +15,6 @@ if not OPENAI_API_KEY or not GITHUB_TOKEN:
 openai.api_key = OPENAI_API_KEY
 gh = Github(GITHUB_TOKEN)
 
-# infer repo if needed
 if not REPO_NAME:
     url = subprocess.run(
         ["git","config","--get","remote.origin.url"],
@@ -70,7 +68,6 @@ resp = openai.ChatCompletion.create(
 )
 readme = resp.choices[0].message.content.strip()
 
-# commit or update README.md
 path = "README.md"
 try:
     src = repo.get_contents(path, ref=branch)
