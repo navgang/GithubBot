@@ -20,7 +20,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB }}
           OPENAI_API_KEY: ${{ secrets.SECRET }}
-        run: cat $GITHUB_EVENT_PATH | python scripts/qa.py
+        run: cat $GITHUB_EVENT_PATH | python scripts/issue.py
 
       - name: Summarize PR
         if: github.event_name == 'pull_request'
