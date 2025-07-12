@@ -44,38 +44,44 @@ req_txt     = snippet("requirements.txt")
 lic_txt     = snippet("LICENSE")
 
 prompt = f"""
-You are an expert technical writer and open-source maintainer.
+You are an experienced open-source maintainer and technical writer.
 
-Write a high-quality `README.md` for this GitHub project using the actual code context provided below.
+Write a well-structured, developer-friendly `README.md` for this Python project. It consists of three standalone scripts that automate GitHub developer workflows using OpenAI and the GitHub API.
 
-Focus on:
-- A clear, honest project description in 2–4 sentences, explaining what the code does and what problems it solves
-- Accurate installation instructions based on dependencies and usage patterns (e.g., Streamlit, OpenAI, GitHub API)
-- Command-line usage examples or app launch instructions
-- Clear formatting in Markdown with code blocks where needed
-- Any helpful assumptions you can make from common patterns (e.g., `.env`, `requirements.txt`, Streamlit usage)
+Your goal is to generate a README that includes:
 
-You can use placeholder badges (optional) and should write this for developers who may clone or contribute to the project.
+1. A clear 2–3 sentence description of what the project does and what problem it solves
+2. A quickstart installation guide based on `requirements.txt` and `.env` setup
+3. Usage instructions for each script:
+   - `summarize.py`: summarize GitHub pull request diffs
+   - `issue.py`: auto-label issues using OpenAI
+   - `readme.py`: generate a new `README.md` from repo context
+4. Requirements for running locally, such as test payloads or GitHub API event simulation
+5. How to configure the `.env` file
+6. Clean Markdown formatting, with command-line examples
+
+Use the following context as your source:
 
 ---
 
-## Project File List:
+## Project Files:
 {entries}
 
 ## requirements.txt (first 2000 characters):
-\"\"\"
-{req_txt}
-\"\"\"
+\"\"\"{req_txt}\"\"\"
 
 ## LICENSE (first 2000 characters):
-\"\"\"
-{lic_txt}
-\"\"\"
+\"\"\"{lic_txt}\"\"\"
 
-## Code Snippet from `summarize.py`:
-\"\"\"
-{snippet("summarize.py")}
-\"\"\"
+## Code Snippets from Scripts:
+### summarize.py
+\"\"\"{snippet("summarize.py")}\"\"\"
+
+### issue.py
+\"\"\"{snippet("issue.py")}\"\"\"
+
+### readme.py
+\"\"\"{snippet("readme.py")}\"\"\"
 """
 
 resp = openai.ChatCompletion.create(
