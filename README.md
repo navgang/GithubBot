@@ -1,18 +1,19 @@
-# Project Name: OpenAI GitHub Assistant
+```markdown
+# Project Name: OpenAI Streamlit Dashboard
 
-A friendly tool to help you interact with the GitHub API using OpenAI's capabilities.
+A simple and interactive dashboard for visualizing OpenAI API responses using Streamlit.
 
-## Installation
+## Installation Steps
 
-To get started with OpenAI GitHub Assistant, follow these simple steps:
+To get started with the OpenAI Streamlit Dashboard, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/openai-github-assistant.git
-   cd openai-github-assistant
+   git clone https://github.com/yourusername/openai-streamlit-dashboard.git
+   cd openai-streamlit-dashboard
    ```
 
-2. **Set up a virtual environment** (optional but recommended):
+2. **Create a virtual environment** (optional but recommended):
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
@@ -24,56 +25,51 @@ To get started with OpenAI GitHub Assistant, follow these simple steps:
    ```
 
 4. **Set up your environment variables**:
-   Create a `.env` file in the root directory and add your OpenAI API key and GitHub token:
+   Create a `.env` file in the root directory and add your OpenAI API key:
    ```
-   OPENAI_API_KEY=your_openai_api_key
-   GITHUB_TOKEN=your_github_token
+   OPENAI_API_KEY=your_openai_api_key_here
    ```
 
 ## Basic Usage
 
-Once you have everything set up, you can start using the OpenAI GitHub Assistant. Here’s a quick example of how to use it:
+To run the Streamlit dashboard, execute the following command in your terminal:
 
-```python
-from assistant import GitHubAssistant
-
-# Initialize the assistant
-assistant = GitHubAssistant()
-
-# Example: Get repository information
-repo_info = assistant.get_repo_info('owner/repo_name')
-print(repo_info)
+```bash
+streamlit run scripts/dashboard.py
 ```
 
-Make sure to replace `'owner/repo_name'` with the actual repository you want to query.
+This will start a local server, and you can view the dashboard by navigating to `http://localhost:8501` in your web browser.
 
 ## How to Contribute
 
 We welcome contributions! Here’s how you can help:
 
-1. **Fork the repository**: Click the "Fork" button at the top right of the page.
-2. **Create a new branch**: 
+1. **Fork the repository**.
+2. **Create a new branch** for your feature or bug fix:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-3. **Make your changes**: Implement your feature or fix a bug.
-4. **Run tests**: Ensure everything is working correctly.
-5. **Commit your changes**: 
+3. **Make your changes** and commit them:
    ```bash
    git commit -m "Add your message here"
    ```
-6. **Push to your fork**: 
+4. **Push to your branch**:
    ```bash
    git push origin feature/your-feature-name
    ```
-7. **Open a pull request**: Go to the original repository and click on "New Pull Request".
+5. **Open a Pull Request** on GitHub.
+
+Please ensure your code adheres to our coding standards and includes tests where applicable.
 
 ## Where to Get Help
 
 If you have any questions or need assistance, feel free to reach out:
 
-- **Open an issue**: If you encounter a bug or have a feature request, please open an issue in the GitHub repository.
-- **Join our community**: Engage with other users and contributors in our community chat (link to chat platform, e.g., Discord, Slack).
-- **Check the documentation**: For more detailed usage instructions, refer to the [Wiki](link to wiki if available).
+- **Open an issue** on GitHub.
+- **Join our community** on Discord or Slack (link to be provided).
+- **Check the documentation** for more detailed information.
 
-Thank you for your interest in OpenAI GitHub Assistant! We hope you find it helpful and enjoyable to use.
+Happy coding!
+```
+
+This README provides a clear and friendly overview of the project, installation steps, usage instructions, contribution guidelines, and support options. Adjust the GitHub repository link and community links as necessary.
