@@ -44,21 +44,38 @@ req_txt     = snippet("requirements.txt")
 lic_txt     = snippet("LICENSE")
 
 prompt = f"""
-You are an expert open-source maintainer. Generate a clear, friendly README.md:
-- Project name & one-line description
-- Installation steps
-- Basic usage
-- How to contribute
-- Where to get help
+You are an expert technical writer and open-source maintainer.
 
-Top-level files/folders:
+Write a high-quality `README.md` for this GitHub project using the actual code context provided below.
+
+Focus on:
+- A clear, honest project description in 2–4 sentences, explaining what the code does and what problems it solves
+- Accurate installation instructions based on dependencies and usage patterns (e.g., Streamlit, OpenAI, GitHub API)
+- Command-line usage examples or app launch instructions
+- Clear formatting in Markdown with code blocks where needed
+- Any helpful assumptions you can make from common patterns (e.g., `.env`, `requirements.txt`, Streamlit usage)
+
+You can use placeholder badges (optional) and should write this for developers who may clone or contribute to the project.
+
+---
+
+## Project File List:
 {entries}
 
-requirements.txt (first 2000 chars):
-\"\"\"{req_txt}\"\"\"
+## requirements.txt (first 2000 characters):
+\"\"\"
+{req_txt}
+\"\"\"
 
-LICENSE (first 2000 chars):
-\"\"\"{lic_txt}\"\"\"
+## LICENSE (first 2000 characters):
+\"\"\"
+{lic_txt}
+\"\"\"
+
+## Code Snippet from `summarize.py`:
+\"\"\"
+{snippet("summarize.py")}
+\"\"\"
 """
 
 resp = openai.ChatCompletion.create(
