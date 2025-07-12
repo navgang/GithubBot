@@ -1,74 +1,91 @@
-# Project Title: Streamlit OpenAI Summarizer
+```markdown
+# GitHub Workflow Automation with OpenAI
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+This project provides a set of three standalone Python scripts that automate common GitHub developer workflows using the OpenAI API and the GitHub API. By streamlining tasks such as summarizing pull request diffs, auto-labeling issues, and generating `README.md` files, this project aims to enhance productivity and reduce manual effort for developers.
 
-## Project Description
+## Quickstart Installation Guide
 
-The Streamlit OpenAI Summarizer is a web application that leverages OpenAI's powerful language model to summarize text content efficiently. This project aims to simplify the process of extracting key insights from lengthy documents, articles, or any text input, making it easier for users to digest information quickly. By integrating with the OpenAI API, the application provides an intuitive interface for users to input text and receive concise summaries in real-time.
-
-## Features
-
-- Summarize any text input using OpenAI's language model.
-- User-friendly interface built with Streamlit.
-- Easy setup and deployment.
-
-## Installation
-
-To get started with the Streamlit OpenAI Summarizer, follow these steps:
+To get started, follow these steps to set up the project on your local machine:
 
 1. **Clone the repository:**
-
    ```bash
-   git clone https://github.com/yourusername/streamlit-openai-summarizer.git
-   cd streamlit-openai-summarizer
+   git clone https://github.com/yourusername/your-repo.git
+   cd your-repo
    ```
 
-2. **Set up a virtual environment (optional but recommended):**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-
-3. **Install the required dependencies:**
-
-   Make sure you have Python 3.8 or higher installed. Then, run:
-
+2. **Install the required packages:**
+   Make sure you have Python 3.7 or higher installed. Then, install the dependencies listed in `requirements.txt`:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables:**
-
-   Create a `.env` file in the root directory of the project and add your OpenAI API key:
-
+3. **Set up your environment variables:**
+   Create a `.env` file in the root directory of the project and add your OpenAI API key and GitHub token:
    ```plaintext
-   OPENAI_API_KEY=your_openai_api_key_here
+   OPENAI_API_KEY=your_openai_api_key
+   GITHUB_TOKEN=your_github_token
    ```
 
-## Usage
+## Usage Instructions
 
-To launch the Streamlit application, run the following command in your terminal:
+### 1. Summarize Pull Request Diffs (`summarize.py`)
 
+This script summarizes the diffs of GitHub pull requests, providing a concise overview of changes made.
+
+**Usage:**
 ```bash
-streamlit run scripts/summarize.py
+python scripts/summarize.py <repository> <pull_request_number>
+```
+**Example:**
+```bash
+python scripts/summarize.py yourusername/your-repo 42
 ```
 
-This will start a local web server, and you can access the application by navigating to `http://localhost:8501` in your web browser.
+### 2. Auto-Label Issues (`issue.py`)
 
-## Contributing
+This script automatically labels GitHub issues based on their content using OpenAI's language model.
 
-Contributions are welcome! If you have suggestions for improvements or want to add new features, please fork the repository and submit a pull request. Ensure that your code adheres to the existing style and includes appropriate tests.
+**Usage:**
+```bash
+python scripts/issue.py <repository> <issue_number>
+```
+**Example:**
+```bash
+python scripts/issue.py yourusername/your-repo 10
+```
 
-## License
+### 3. Generate `README.md` (`readme.py`)
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This script generates a new `README.md` file based on the context of your repository, helping you maintain up-to-date documentation.
 
-## Acknowledgements
+**Usage:**
+```bash
+python scripts/readme.py <repository>
+```
+**Example:**
+```bash
+python scripts/readme.py yourusername/your-repo
+```
 
-- [OpenAI](https://openai.com/) for providing the API.
-- [Streamlit](https://streamlit.io/) for creating an easy-to-use framework for building web applications.
+## Requirements for Running Locally
 
----
+To run the scripts successfully, ensure you have:
+- A valid OpenAI API key.
+- A GitHub personal access token with appropriate permissions (e.g., repo access).
+- Sample payloads for testing, which can be found in the `test_payloads` directory.
 
-Feel free to reach out if you have any questions or need further assistance!
+## Configuring the `.env` File
+
+The `.env` file should contain the following variables:
+
+```plaintext
+OPENAI_API_KEY=your_openai_api_key
+GITHUB_TOKEN=your_github_token
+```
+
+Replace `your_openai_api_key` and `your_github_token` with your actual API keys. Ensure that this file is kept secure and not shared publicly.
+
+## Conclusion
+
+This project aims to simplify and enhance your GitHub workflow by leveraging the power of OpenAI and the GitHub API. For any issues or feature requests, please open an issue in the repository. Happy coding!
+```
